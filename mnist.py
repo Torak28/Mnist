@@ -27,4 +27,8 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 print(f'--------------')
 print(f'One- hot encoded vector: {y_train[0]}')
 
+model = Sequential()
 
+model.add(Dense(units=32, activation='sigmoid', input_shape=(image_vector_size,)))
+model.add(Dense(units=num_classes, activation='softmax'))
+model.summary()
