@@ -51,6 +51,8 @@ model.compile(optimizer="sgd", loss='categorical_crossentropy', metrics=['accura
 history = model.fit(x_train, y_train, batch_size=128, epochs=5, verbose=False, validation_split=.1)
 loss, accuracy  = model.evaluate(x_test, y_test, verbose=False)
 
+print(f'{history.history.keys()}')
+
 plt.plot(history.history['acc'])
 plt.plot(history.history['val_acc'])
 plt.title('model accuracy')
